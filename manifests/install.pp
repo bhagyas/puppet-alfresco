@@ -365,7 +365,7 @@ class alfresco::install inherits alfresco {
 				"ImageMagick",
 				"zlib-devel",
 				"libjpeg-turbo-devel",
-				"giflib-devel",
+#				"giflib-devel", #disabled for enterprise linux 7 compatibility
 				"freetype-devel",
 				"gcc",
 				"gcc-c++"
