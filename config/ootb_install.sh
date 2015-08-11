@@ -13,7 +13,7 @@ then
 fi
 
 # install external modules
-./install/modules-for-vagrant.sh
+sh ./install/modules-for-vagrant.sh #handles any possible chmod issues
 
 # ensure that our module is in the right place
 if [ ! -d modules/alfresco ]
