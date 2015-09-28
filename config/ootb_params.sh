@@ -103,6 +103,11 @@ params[$IDX]="mem_xxmaxpermsize"
 descr[$IDX]="Setting to pass as '-XX:MaxPermSize' in JAVA_OPTS"
 default[$IDX]="256m"
 
+IDX=$(( $IDX + 1 ))
+params[$IDX]="db_already_exists"
+descr[$IDX]="Do you have an existing local database server that is intended to run? This will skip installation of MySQL. (y/N)"
+default[$IDX]="y"
+
 
 #IDX=$(( $IDX + 1 ))
 #params[$IDX]="solr_host"

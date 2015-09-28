@@ -2,7 +2,7 @@
 # -------
 # Script to set up iptables for Alfresco use
 # 
-# Copyright 2013 Loftux AB, Peter Löen
+# Copyright 2013 Loftux AB, Peter Löfgren
 
 # Change to public ip-adress on alfresco server
 export IPADDRESS=`hostname -I`

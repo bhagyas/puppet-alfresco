@@ -85,6 +85,7 @@ class alfresco (
 	$db_pass			= $alfresco::params::db_pass,
 	$db_name			= $alfresco::params::db_name,
 	$db_host			= $alfresco::params::db_host,
+	$db_already_exists			= $alfresco::params::db_already_exists,
 	$db_port			= 3306,
   $mail_host    = 'localhost',
   $mail_port    = 25,

@@ -128,3 +128,5 @@ A note about [sharepoint support](docs/sharepoint.md) - tl;dr? use `https://<dom
 
 There were a couple of other installtion methods. For historical reasons [they are recorded here](docs/other-install.md)
 
+###Notes for Oracle 7.1
+- Install MySQL at the time of OS installation.
