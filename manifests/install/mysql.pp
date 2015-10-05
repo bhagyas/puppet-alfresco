@@ -43,20 +43,20 @@ class alfresco::install::mysql inherits alfresco {
 		download_path => "${download_path}",
 	}
 
-		exec { "create ${tomcat_home}/lib":
-			user => 'tomcat',
-			command => "mkdir -p ${download_path}/lib",
-			require => Safe-download["download-mysql-connector"],
-			creates => "${tomcat_home}/lib",
-			before => Exec["copy-mysql-connector"]
-		}
+	exec { "create-tomcat_home-lib":
+		user => 'tomcat',
+		command => "mkdir -p ${download_path}/lib",
+		require => Safe-download["download-mysql-connector"],
+		creates => "${tomcat_home}/lib",
+		before => Exec["copy-mysql-connector"]
+	}
 
 	exec { "copy-mysql-connector":
 		user => 'tomcat',
 		command => "cp ${download_path}/${urls::mysql_connector_filename} ${tomcat_home}/lib/",
 		path => "/bin:/usr/bin",
 		require => [
-			Exec["create ${tomcat_home}/lib"],
+			Exec["create-tomcat_home-lib"],
 			Safe-download["download-mysql-connector"],
 		],
 		creates => "${tomcat_home}/lib/${urls::mysql_connector_filename}",
