@@ -113,7 +113,7 @@ class alfresco::install::alfresco-ce inherits alfresco::install {
 
 				safe-download { 'spp-amp':
 					url => "${urls::spp_amp_v5}",
-					filename => "${urls::$spp_amp_lx_name}",
+					filename => "${urls::spp_amp_lx_name}",
 					download_path => "${alfresco_base_dir}/amps",
 				}
 
