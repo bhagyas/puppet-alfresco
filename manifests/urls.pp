@@ -49,12 +49,7 @@ class urls {
   $filename_tomcat = "${name_tomcat}.tar.gz"
   $url_tomcat = "http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.55/bin/${filename_tomcat}"
 
-
-	$mysql_connector_name = 'mysql-connector-java-5.1.34'
-  $mysql_connector_file = "${mysql_connector_name}.tar.gz"
-  $mysql_connector_url = "http://dev.mysql.com/get/Downloads/Connector-J/${mysql_connector_file}"
-
-
+  $mysql_connector_maven_central_url = "http://central.maven.org/maven2/mysql/mysql-connector-java/${$mysql_connector_version}/mysql-connector-java-${$mysql_connector_version}.jar"
 
   $solr_dl_file = 'alfresco-community-solr-4.2.f.zip'
   $solr_dl = "http://dl.alfresco.com/release/community/4.2.f-build-00012/${solr_dl_file}"

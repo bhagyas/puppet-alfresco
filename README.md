@@ -1,5 +1,10 @@
 ## Order of the Bee "Honeycomb" edition of Alfresco
 
+### Introduction
+
+This is an installation of Alfresco using Puppet. It installs the Honeycomb edition of Alfresco and related dependencies. It also includes some of the Alfresco open source add-ons.
+
+
 #### <a name='features'></a>Features
 * Standalone build with repo, share, mysql and solr on one server. Remote mysql supported now, remote solr and pentaho next version
 * Choose from version 4.2.f, latest 5.0.x or NIGHTLY
@@ -14,6 +19,8 @@
 * Custom Order of the Bee theme
 
 #### <a name='included-addons'></a>Included addons
+Honeycomb edition includes a small set of tested and trusted open source add-ons verified by the Alfresco Add-ons commitee of Order of the Bee.
+
 A small list for now but soon to be growing
 * Google docs integration
 * [Javascript console](https://addons.alfresco.com/addons/javascript-console)
@@ -21,10 +28,17 @@ A small list for now but soon to be growing
 * [Alfresco Records Management](https://www.alfresco.com/products/records-management)
 * [Uploader Plus](https://addons.alfresco.com/addons/uploader-plus)
 
+You can install additional add-ons and commercial add-ons as necessary using the standard installation methods.
+
+
+### Prerequisites
+
+- Git
+- Puppet
 
 #### <a name='getting-started'></a>Getting started
 
-First make sure that `git` is installed on your machine. Now run the following commands:
+Run the following commands:
 
 ```
   git clone https://github.com/marsbard/puppet-alfresco.git alfresco
@@ -79,7 +93,7 @@ If you choose something other than 'localhost' for "db_host" then no mysql serve
 
 
 
-#### <a name='backup'></a>Backing up with BART
+#### <a name='backup'></a>Setting up backup with BART (Alfresco Backup and Restore Tool)
 
 To configure backup, run this command `sudo ./setup-backup.sh`
 
@@ -119,7 +133,7 @@ All the backup methods offered by BART are supported, for `backuptype` you can u
 See [this document](docs/ssl.md)
 
 
-#### <a name='sharepoint'></a>Supporting sharepoint
+#### <a name='sharepoint'></a>Supporting Sharepoint
 
 A note about [sharepoint support](docs/sharepoint.md) - tl;dr? use `https://<domain_name>/spp` as the endpoint in Microsoft Office.
 
@@ -127,4 +141,29 @@ A note about [sharepoint support](docs/sharepoint.md) - tl;dr? use `https://<dom
 #### <a name='installation-methods'></a>Other installation methods
 
 There were a couple of other installtion methods. For historical reasons [they are recorded here](docs/other-install.md)
+
+## Start/Stop Service
+
+Once installed, you can start and stop service by issuing the following command on CentOS based distributions. Note that the server is automatically started after the installation.
+
+Start:
+
+`sudo service tomcat start`
+
+Stop:
+
+`sudo service tomcat stop`
+
+## Known issues
+
+- The script does not support Enterprise Linux 7+ at the moment.
+
+## Version History
+
+- **2015 October 10** Added support for RHEL 6.6
+
+## Contributors
+
+- Martin Cosgrave
+- Bhagya Silva ([Loftux AB](https://www.loftux.com)) (https://about.me/bhagyas)
 

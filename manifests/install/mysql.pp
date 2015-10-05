@@ -37,30 +37,10 @@ class alfresco::install::mysql inherits alfresco {
 		java_enable => 1,
 	}
 
-	safe-download { 'mysql-connector':
-		url => "${urls::mysql_connector_url}",
+	safe-download { "download-mysql-connector":
+		user => 'tomcat',
 		filename => "${urls::mysql_connector_file}",
-		download_path => $download_path,
-	}
-
-	exec { "unpack-mysql-connector":
-    user => 'tomcat',
-		command => "tar xzvf ${urls::mysql_connector_file}",
-		cwd => $download_path,
-		path => "/bin",
-		require => Safe-download["mysql-connector"],
-		creates => "${download_path}/${urls::mysql_connector_name}",
-	}
-
-	exec { "copy-mysql-connector":
-    user => 'tomcat',
-		command => "cp ${download_path}/${urls::mysql_connector_name}/${urls::mysql_connector_name}-bin.jar  ${tomcat_home}/shared/lib/",
-		path => "/bin:/usr/bin",
-		require => [
-			Exec["unpack-mysql-connector"],
-			File["${tomcat_home}/shared/lib"],
-		],
-		creates => "${tomcat_home}/shared/lib/${urls::mysql_connector_name}-bin.jar",
+		download_path => "${tomcat_home}/lib"
 	}
 
 }
