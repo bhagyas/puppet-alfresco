@@ -49,7 +49,6 @@ class alfresco::install::mysql inherits alfresco {
 		path => "/bin:/usr/bin",
 		require => Safe-download["download-mysql-connector"],
 		creates => "${tomcat_home}/lib",
-		before => Exec["copy-mysql-connector"]
 	}
 
 	exec { "copy-mysql-connector":
@@ -61,7 +60,6 @@ class alfresco::install::mysql inherits alfresco {
 			Safe-download["download-mysql-connector"],
 		],
 		creates => "${tomcat_home}/lib/${urls::mysql_connector_filename}",
-		before => Service['alfresco-start'],
 	}
 
 }
