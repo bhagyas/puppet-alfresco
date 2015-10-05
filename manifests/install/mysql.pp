@@ -40,7 +40,7 @@ class alfresco::install::mysql inherits alfresco {
 	safe-download { "download-mysql-connector":
 		user => 'tomcat',
 		filename => "${urls::mysql_connector_file}",
-		download_path => "${tomcat_home}/lib"
+		download_path => "${tomcat_home}/lib",
 	}
 
 }
