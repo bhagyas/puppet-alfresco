@@ -10,7 +10,7 @@ class alfresco::addons::rm inherits alfresco::addons {
 			# MC assuming that this is the correct creates for 4.2.f, certainly isn't for 5.0.x
 			$recmancreates = "${download_path}/rm/README.txt"
 		}	
-		'5.0.x','NIGHTLY':{
+		'5.0.x','NIGHTLY', 'LX':{
 			$recmanpath = 'http://dl.alfresco.com/release/community/5.0.d-build-00002'
 			$recmanfile = 'alfresco-rm-2.3.c.zip'
 			$recmanrepo = 'alfresco-rm-server-2.3.c.amp'

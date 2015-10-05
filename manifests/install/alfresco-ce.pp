@@ -91,6 +91,33 @@ class alfresco::install::alfresco-ce inherits alfresco::install {
 				}
 
       }
+      'LX': {
+
+				safe-download { 'alfresco.war':
+					url => "${urls::alfresco_war_lx}",
+					filename => "alfresco.war",
+					download_path => "${tomcat_home}/webapps/",
+				}
+
+				safe-download { 'share.war':
+					url => "${urls::share_war_lx}",
+					filename => "share.war",
+					download_path => "${tomcat_home}/webapps/",
+				}
+
+        file { "${tomcat_home}/webapps":
+          ensure => directory,
+          require => File["${tomcat_home}"],
+          owner => 'tomcat',
+        }
+
+				safe-download { 'spp-amp':
+					url => "${urls::spp_amp_v5}",
+					filename => "${urls::$spp_amp_lx_name}",
+					download_path => "${alfresco_base_dir}/amps",
+				}
+
+      }
       'NIGHTLY': {
 
 				# moved to nightly.pp

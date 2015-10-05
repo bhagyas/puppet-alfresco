@@ -1,6 +1,7 @@
 class urls {
 
   $v50x = '5.0.d'
+  $lx_version = "LX81"
 
   $nightly = 'http://dev.alfresco.com/downloads/nightly/dist/alfresco-community-5.1-SNAPSHOT.zip'
   $nightly_name = 'alfresco-community-5.1-SNAPSHOT'
@@ -16,7 +17,15 @@ class urls {
   $share_war_50x = "https://artifacts.alfresco.com/nexus/service/local/repo_groups/public/content/org/alfresco/share/${v50x}/share-${v50x}.war"
 
 
-	$solr_war_file = "alfresco-solr4-${v50x}-ssl.war"
+  $alfresco_war_lx = "http://artifacts.loftux.net/nexus/service/local/repositories/releases/content/se/loftux/alfresco/alfresco/${$lx_version}/alfresco-${$lx_version}.war"
+  $share_war_lx = "http://artifacts.loftux.net/nexus/service/local/repositories/releases/content/se/loftux/alfresco/share/${$lx_version}/share-${$lx_version}.war"
+  $spp_amp_lx ="http://artifacts.loftux.net/nexus/service/local/repositories/releases/content/se/loftux/alfresco/alfresco-spp/${lx_version}/alfresco-spp-${lx_version}.amp"
+  $spp_amp_lx_name = "alfresco-spp-${lx_version}.amp"
+
+  $solr_war_file_lx = "alfresco-solr-${$lx_version}.war"
+  $solr_war_dl_lx = "http://artifacts.loftux.net/nexus/service/local/repositories/releases/content/se/loftux/alfresco/alfresco-solr/${$lx_version}/${solr_war_file_lx}.war"
+
+  $solr_war_file = "alfresco-solr4-${v50x}-ssl.war"
 	$solr_war_dl = "https://artifacts.alfresco.com/nexus/service/local/repo_groups/public/content/org/alfresco/alfresco-solr4/${v50x}/$solr_war_file"
 	
 	$solr_cfg_file = "alfresco-solr4-${v50x}-config-ssl.zip"
@@ -49,6 +58,7 @@ class urls {
   $filename_tomcat = "${name_tomcat}.tar.gz"
   $url_tomcat = "http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.55/bin/${filename_tomcat}"
 
+  $mysql_connector_version='5.1.36'
   $mysql_connector_maven_central_url = "http://central.maven.org/maven2/mysql/mysql-connector-java/${$mysql_connector_version}/mysql-connector-java-${$mysql_connector_version}.jar"
 
   $solr_dl_file = 'alfresco-community-solr-4.2.f.zip'

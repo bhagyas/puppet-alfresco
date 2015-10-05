@@ -123,6 +123,10 @@ class alfresco (
       $indexer = 'solr4'
       $cmis_url = '/alfresco/cmisatom'
     }
+		'LX': {
+			$indexer = 'solr4'
+			$cmis_url = '/alfresco/cmisatom'
+		}
 		default: {
 			fail("Unsupported version ${alfresco_version}")
 		}	
