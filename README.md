@@ -4,11 +4,16 @@
 
 This is an installation of Alfresco using Puppet. It installs the Honeycomb edition of Alfresco and related dependencies. It also includes some of the Alfresco open source add-ons.
 
+### Prerequisites
+
+- Git
+- Puppet
+
 
 #### <a name='features'></a>Features
 * Standalone build with repo, share, mysql and solr on one server. Remote mysql supported now, remote solr and pentaho next version
 * Choose from version 4.2.f, latest 5.0.x or NIGHTLY
-* Installation supported on Ubuntu and CentOS. 
+* Installation supported on Ubuntu and CentOS.
 * Puppet based, so makes idempotent changes and if interrupted can pick up where it left off
 * Simple bash based configuration
 * Built in BART backup - run `./setup_backup.sh` after install to configure.
@@ -31,12 +36,11 @@ A small list for now but soon to be growing
 You can install additional add-ons and commercial add-ons as necessary using the standard installation methods.
 
 
-### Prerequisites
-
-- Git
-- Puppet
-
 #### <a name='getting-started'></a>Getting started
+
+You can download the `complete-install-rhel-6.sh` if you are on RHEL 6.x and run it as root.
+
+If not, see the below.
 
 Run the following commands:
 
@@ -52,7 +56,7 @@ You will see an installer like this (there are a few more parameters in it these
 	 __/  \__/  \__/  \__/  \__/  \__/  \__/  \__/  \__/  \__/  \__
 	/  \__ ORDER OF THE BEE /  \__/  \__/  \__/  \__/  \__/  \__/  \
 	\__/  \__/  \__/  \__/  \ Alfresco (TM) Honeycomb Edition   \__/
-	   \__/  \__/  \__/  \__/  \__/  \__/  \__/  \__/  \__/  \__/  
+	   \__/  \__/  \__/  \__/  \__/  \__/  \__/  \__/  \__/  \__/
 
 	Installer parameters
 	--------------------
@@ -84,7 +88,7 @@ If you choose a parameter you will see a short help message, and the current def
 	 -> 2
 	Parameter: mail_from_default
 	Default mail address to use in the 'From' field of sent mails
-	[admin@localhost]: 
+	[admin@localhost]:
 
 Edit any parameters you would like to change. If you select "Q" then any parameters you have changed will be saved before quitting, likewise changes are saved before doing the install. Actually selecting the install option will download puppet if necessary and then proceed to apply the puppet configuration to bring the system up to a running alfresco instance.
 
@@ -118,12 +122,12 @@ Idx			Param                     Value
 [14]		scp_folder                /home/backups
 
 Please choose an index number to edit, A to apply configuration, or Q to quit
- -> 
+ ->
 ```
 The parameter names you see here mostly match the names in the BART script itself so if you want clarification about anything just check in that file, you'll
 find it in `/opt/alfresco/scripts` in the default install, or elsewhere if you changed `alfresco_base_dir`.
 
-Note you should not change `alfresco_base_dir` in this menu since it is picked up automatically from the previous configuration. 
+Note you should not change `alfresco_base_dir` in this menu since it is picked up automatically from the previous configuration.
 
 All the backup methods offered by BART are supported, for `backuptype` you can use any of 'scp', 's3', 'local', or 'ftp' and the menu will change to show relevant configuration.
 
@@ -160,7 +164,11 @@ Stop:
 
 ## Version History
 
-- **2015 October 10** Added support for RHEL 6.6
+**2015 October 10**
+
+- Added support for RHEL 6.6.
+- Updated installation for ConnectorJava for MySQL
+- Added RHEL 6.6 complete installation script.
 
 ## Contributors
 
