@@ -23,7 +23,7 @@ class urls {
   $spp_amp_lx_name = "alfresco-spp-${lx_version}.amp"
 
   $solr_war_file_lx = "alfresco-solr-${$lx_version}.war"
-  $solr_war_dl_lx = "http://artifacts.loftux.net/nexus/service/local/repositories/releases/content/se/loftux/alfresco/alfresco-solr/${$lx_version}/${solr_war_file_lx}.war"
+  $solr_war_dl_lx = "http://artifacts.loftux.net/nexus/service/local/repositories/releases/content/se/loftux/alfresco/alfresco-solr/${$lx_version}/${solr_war_file_lx}"
 
   $solr_war_file = "alfresco-solr4-${v50x}-ssl.war"
 	$solr_war_dl = "https://artifacts.alfresco.com/nexus/service/local/repo_groups/public/content/org/alfresco/alfresco-solr4/${v50x}/$solr_war_file"
