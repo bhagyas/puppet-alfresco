@@ -170,7 +170,7 @@ class alfresco (
 		$timeout = 0,
 		) { 
 		exec { "safe-clean-any-old-${title}":
-			command => "/bin/rm -i -f ${download_path}/tmp__${filename}",
+			command => "/bin/rm -f ${download_path}/tmp__${filename}",
 			creates => "${download_path}/${filename}",
 			require => File[$download_path],
 			user => $user,
