@@ -94,7 +94,8 @@ class alfresco (
   $apt_cache_host = '',
   $apt_cache_port = 3142,
   $ssl_cert_path = '',
-  $enable_proxy = true
+  $enable_proxy = true,
+	$proxy_server = 'apache'
 ) inherits alfresco::params {
 
 	include urls
